@@ -57,6 +57,15 @@
   <ItemGroup>
     <Compile Include="BookService.cs" />
     <Compile Include="BookStore.cs" />
+    <Compile Include="Migrations\202405221451214_InitialCreate.cs" />
+    <Compile Include="Migrations\202405221451214_InitialCreate.Designer.cs">
+      <DependentUpon>202405221451214_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202405221503339_ChangeBookClass.cs" />
+    <Compile Include="Migrations\202405221503339_ChangeBookClass.Designer.cs">
+      <DependentUpon>202405221503339_ChangeBookClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Author.cs" />
     <Compile Include="Models\Book.cs" />
     <Compile Include="Models\BookGenre.cs" />
@@ -68,6 +77,14 @@
   <ItemGroup>
     <None Include="App.Config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202405221451214_InitialCreate.resx">
+      <DependentUpon>202405221451214_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202405221503339_ChangeBookClass.resx">
+      <DependentUpon>202405221503339_ChangeBookClass.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

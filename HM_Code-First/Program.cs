@@ -42,6 +42,7 @@ namespace HM_Code_First
             {
                 Name = "Example Book 1",
                 Year = 2022,
+                Price = 888.88m,
                 AuthorId = BookService.GetAuthorById(1).AuthorId,
                 PublisherId = BookService.GetPublisherById(1).PublisherId,
                 Genre = new List<Genre> { genres[0], genres[1] }
@@ -51,6 +52,7 @@ namespace HM_Code_First
             {
                 Name = "Example Book 2",
                 Year = 2023,
+                Price = 2333.45m,
                 AuthorId = BookService.GetAuthorById(1).AuthorId,
                 PublisherId = BookService.GetPublisherById(1).PublisherId,
                 Genre = new List<Genre> { genres[0] }
@@ -58,6 +60,17 @@ namespace HM_Code_First
 
             BookService.AddBook(book1);
             BookService.AddBook(book2);
+
+
+            /*CreateTable("dbo.Books",
+                b => new {
+                    Id = b.Int(nullable: false, identity: true),
+                    Name = b.String(nullable: false, maxLength: 255),
+                    Year = b.Int(nullable: false),
+                    Price = b.Decimal(precision: 5, scale: 2),
+                    AuthorId = b.Int(nullable: false),
+                    PublisherId = b.Int(nullable: false)
+                }).PrimaryKey(b => b.Id);*/
         }
     }
 }
